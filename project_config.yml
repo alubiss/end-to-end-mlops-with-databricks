@@ -1,0 +1,57 @@
+prd:
+  catalog_name: mlops_prd
+  schema_name: olalubic
+  pipeline_id: 9b8df4fc-bfe1-4cc1-9534-e579a017629d
+acc:
+  catalog_name: mlops_acc
+  schema_name: olalubic
+  pipeline_id: 9b8df4fc-bfe1-4cc1-9534-e579a017629d
+dev:
+  catalog_name: mlops_dev
+  schema_name: olalubic
+  pipeline_id: 9b8df4fc-bfe1-4cc1-9534-e579a017629d
+
+experiment_name_basic: /Shared/alubiss-model-basic
+experiment_name_custom: /Shared/alubiss-model-custom
+experiment_name_fe: /Shared/alubiss-model-fe
+
+parameters:
+  learning_rate: 0.01
+  n_estimators: 1000
+  max_depth: 6
+
+hyperparameters_tuning: True
+
+id_cols:
+ - Booking_ID
+ - Client_ID
+
+num_features:
+  - no_of_adults
+  - no_of_children
+  - no_of_weekend_nights
+  - no_of_week_nights
+  - lead_time
+  - repeated_guest
+  - no_of_previous_cancellations
+  - no_of_previous_bookings_not_canceled
+  - avg_price_per_room
+  - no_of_special_requests
+
+date_features:
+  - arrival_month
+
+cat_features:
+  - type_of_meal_plan
+  - required_car_parking_space
+  - room_type_reserved
+  - market_segment_type
+  - country
+
+target: booking_status
+
+banned_clients_ids:
+  - "12345"
+  - "67890"
+  - "ABCDE"
+  - "95890"
